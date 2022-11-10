@@ -1,0 +1,44 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(223, 221, 208);
+    background: linear-gradient(90deg, rgba(223, 221, 208, 1) 0%, rgba(163, 158, 118, 1) 100%, rgba(198, 194, 168, 1) 100%);
+}
+
+.logo-container {
+    margin-left: 10rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #313131;
+}
+
+.list {
+    color: #313131;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list-item {
+    margin: 2rem 2rem;
+    font-size: 1.5rem;
+}
+
+.subscribe-container {
+    margin-right: 10rem;
+}
+
+.button {
+    color: #DFDDD0;
+    font-size: 2rem;
+    font-weight: lighter;
+    letter-spacing: 0.075rem;
+    border: none;
+    width: 16rem;
+    height: 4rem;
+    background-color: #313131;
+}
