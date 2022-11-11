@@ -1,0 +1,45 @@
+.hero-container {
+    display: flex;
+    gap: 2rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    height: 50vh;
+}
+
+.text-circle-container {
+    display: flex;
+}
+
+.text-container {
+    width: 50%;
+}
+
+.text {
+    color: #313131;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: -0.1rem;
+}
+
+.image-container {
+    height: 60%;
+}
+
+.image {
+    object-fit: cover;
+    height: 80%;
+    width: 100%;
+    border-radius: 2rem;
+    margin: 0;
+}
+
+.second-text-container{
+    font-size: 3rem;
+}
+
+.second-section-container {
+    display: grid;
+    border: 1px solid red;
+}
+
+

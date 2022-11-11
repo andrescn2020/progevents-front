@@ -1,13 +1,17 @@
+import Hero from '../Hero/Hero';
 import { NavBar } from '../NavBar/NavBar';
 
 function App() {
 
   return (
 
-    <NavBar />
+    <div>
+      <NavBar />
+      <Hero />
+    </div>
 
   )
-  
+
 };
 
 export default App;

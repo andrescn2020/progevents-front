@@ -1,9 +1,18 @@
+body {
+    background: rgb(223, 221, 208);
+    background: linear-gradient(90deg, rgba(223, 221, 208, 1) 0%, rgba(163, 158, 118, 1) 100%, rgba(198, 194, 168, 1) 100%);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+}
+
+//COMPONENTS
 @import url("../src/components/NavBar/NavBar.scss");
+@import url("../src/components/Hero/Hero.scss");
 
 //FONTS
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
-body {
-    font-family: 'Outfit', sans-serif;
-    margin: 0;
-}
+
+
+
+
