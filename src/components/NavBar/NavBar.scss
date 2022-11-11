@@ -82,26 +82,32 @@
     }
   }
 
+
+
   @media only screen and (max-width: 1080px){
     .navbar-container {
-        justify-content: center;
+        width: 100vw;
+        margin-right: 2rem;
         gap: 2rem;
     }
-	.logo-container {
-        margin-left: -2rem;
+    .list {
+        color: #313131;
+        display: flex;
+        align-items: center;
+    }
+    .logo-container {
+        margin-left: 1rem;
     }
     .logo {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     .list-item {
-        font-size: 1rem;
+        font-size: 1.5rem;
+
         margin: 1rem 1rem;
     }
     .subscribe-container {
-        width: 12rem;
-        height: 3rem;
-        margin-right: 2rem;
-        margin-bottom: 1rem;
+        margin-right: 1rem;
     }
 }
 
