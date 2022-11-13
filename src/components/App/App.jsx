@@ -1,3 +1,4 @@
+import Carrusel from '../Carrusel/Carrusel';
 import Hero from '../Hero/Hero';
 import { NavBar } from '../NavBar/NavBar';
 
@@ -8,6 +9,7 @@ function App() {
     <div>
       <NavBar />
       <Hero />
+      <Carrusel />
     </div>
 
   )
