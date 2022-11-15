@@ -6,8 +6,10 @@ body {
 }
 
 //COMPONENTS
+@import url("../src/components/Carrusel/Carrusel.scss");
 @import url("../src/components/NavBar/NavBar.scss");
 @import url("../src/components/Hero/Hero.scss");
+@import url("../src/components/Filtros/Filtros.scss");
 
 //FONTS
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');

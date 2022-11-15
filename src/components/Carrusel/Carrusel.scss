@@ -1,0 +1,125 @@
+.full-container {
+    margin-top: 10rem;
+    background-color: #313131;
+    width: auto;
+    height: 120vh;
+}
+
+.next-events {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    display: flex;
+    align-items: center;
+    height: 25vh;
+}
+
+.subtitle {
+    color: bisque;
+    width: 25%;
+    font-size: 3rem;
+}
+
+.arrow-container {
+    width: 75%;
+    display: flex;
+    justify-content: end;
+}
+
+.carrusel-container {
+    margin-right: 10rem;
+    margin-left: 10rem;
+    border-radius: 1rem;
+    height: 75vh;
+}
+
+.carousel-inner {
+    height: 75vh;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.fitter {
+    border: 1px solid red;
+}
+
+.image-carousel {
+    height: 75vh;
+    width: auto;
+    border-radius: 1rem;
+    display: block;
+}
+
+.arrow-container-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 1080px){
+    .full-container {
+        margin-top: 40rem;
+    }
+    .carrusel-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .image-carousel {
+        height: 50vh;
+        width: auto;
+    }
+    .carrusel-container {
+        height: 50vh;
+    }
+    .carousel-inner {
+        height: 50vh;
+    }
+    .subtitle {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        font-size: 2rem;
+    }
+    .arrow-container {
+        display: none;
+    }
+    .arrow-container-mobile {
+        margin-top: 10rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .full-container {
+        margin-top: 10rem;
+    }
+    .carrusel-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .image-carousel {
+        height: 50vh;
+        width: auto;
+    }
+    .carrusel-container {
+        height: 50vh;
+    }
+    .carousel-inner {
+        height: 50vh;
+    }
+    .subtitle {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        font-size: 2rem;
+    }
+    .arrow-container {
+        display: none;
+    }
+    .arrow-container-mobile {
+        margin-top: 10rem;
+        display: flex;
+        justify-content: center;
+    }
+}
