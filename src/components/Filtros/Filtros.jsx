@@ -1,8 +1,7 @@
 import { BsCaretRight } from "react-icons/bs";
 import { BsCaretLeft } from "react-icons/bs";
-import { BsCheck2 } from "react-icons/bs";
 import Card from 'react-bootstrap/Card';
-import { changePage, getEvents, getFilter, getFilteredEvents, resetFilters } from '../../actions/actions';
+import { getEvents, getFilter, getFilteredEvents, resetFilters } from '../../actions/actions';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,41 +9,55 @@ const Filtros = () => {
 
   const dispatch = useDispatch();
   const allFilters = useSelector((state) => state.filters);
-  const page = useSelector((state) => state.page);
-  const allEvents = useSelector((state) => state.events);
   const filteredEvents = useSelector((state) => state.filterEvents);
-  const pagesPerView = useSelector((state) => state.pagesPerView);
-  
-  let filteredEventsPagination = [];
-  let indexOfLastEvent = 0;
-  let indexOfFirstEvent = 0;
+  const [currentPage, setCurrentPage] = useState(1);
+  const PAGES_PER_VIEW = 6;
+
+  let indexOfLastEvent = currentPage * PAGES_PER_VIEW;
+  let indexOfFirstEvent = indexOfLastEvent - PAGES_PER_VIEW;
+  let currentEvents = [];
 
   useEffect(() => {
     dispatch(getEvents())
   }, []);
 
-  if(page === 1) {
-    filteredEventsPagination = filteredEvents;
-    filteredEventsPagination = filteredEventsPagination.slice(0,6);
+  if (currentPage === 1) {
+    currentEvents = filteredEvents;
+    currentEvents = currentEvents.slice(0, 6);
   } else {
-    filteredEventsPagination = filteredEvents;
-    indexOfLastEvent = page * pagesPerView;
-    indexOfFirstEvent = indexOfLastEvent - pagesPerView;
-    filteredEventsPagination = filteredEventsPagination.slice(indexOfFirstEvent, indexOfLastEvent);
+    currentEvents = filteredEvents;
+    indexOfLastEvent = currentPage * PAGES_PER_VIEW;
+    indexOfFirstEvent = indexOfLastEvent - PAGES_PER_VIEW;
+    currentEvents = currentEvents.slice(indexOfFirstEvent, indexOfLastEvent);
   }
-
-  console.log(page);
 
   const handleFilter = (e) => {
-    
-    dispatch(getFilter(e.target.value, e.target.name))
-    dispatch(getFilteredEvents(allFilters))
-    
-  }
+    dispatch(getFilter(e.target.value, e.target.name));
+    dispatch(getFilteredEvents(allFilters));
+    setCurrentPage(1);
+  };
+
+  const nextPage = () => {
+    if (currentEvents.length < 6) {
+      return
+    } else {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const previousPage = () => {
+    if (currentPage === 1) {
+      setCurrentPage(1);
+    } else {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <div className="filter-container">
+
       <div className="container">
+
         <h1 className="filter-title">Filtros</h1>
         <select name='date' onChange={handleFilter} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
           <option value="defaultDate">Fecha</option>
@@ -67,28 +80,35 @@ const Filtros = () => {
           <option value="gratis">Gratis</option>
           <option value="con precio">Valor Pagado</option>
         </select>
-        <button onClick={() => dispatch(resetFilters())}>Limpiar Filtros</button>
+        <div className="button-container">
+          <button type="button" onClick={() => dispatch(resetFilters())} className="btn btn-secondary">Limpiar Filtros</button>
+        </div>
+
+        {/* <Button variant="secondary" onClick={() => dispatch(resetFilters())}>Limpiar Filtros</Button> */}
       </div>
+      <div className="section-right-container">
+        <div className="events-container">
+          {currentEvents?.map((event) => (
+            <Card key={event.id} className="card">
+              <Card.Img className="card-image" variant="top" src={event.image} />
+              <Card.Body>
+                <Card.Title>{event.title}</Card.Title>
+                <Card.Text>
+                  Fecha: {event.date.slice(5)}
+                </Card.Text>
+                <a href={event.eventLink} target="_blank">Registrarse</a>
+              </Card.Body>
+            </Card>
+          ))}
 
+        </div>
 
-      <div className="events-container">
-        {filteredEventsPagination?.map((event) => (
-          <Card key={event.id} className="card">
-            <Card.Img className="card-image" variant="top" src={event.image} />
-            <Card.Body>
-              <Card.Title>{event.title}</Card.Title>
-              <Card.Text>
-                Fecha: {event.date.slice(5)}
-              </Card.Text>
-              <a href={event.eventLink} target="_blank">Registrarse</a>
-            </Card.Body>
-          </Card>
-        ))}
-        <BsCaretLeft id={[page - 1, "restar"]} className="previous-icon" onClick={(e) => dispatch(changePage(e.target.id))} size={40} />
-        <div>{page}</div>
-        <BsCaretRight id={[page + 1, "sumar"]} className="next-icon" onClick={(e) => dispatch(changePage(e.target.id))} size={40} />
+        <div className="pagination-container">
+          <BsCaretLeft className="previous-icon" onClick={previousPage} size={40} />
+          <div>{currentPage} de {Math.ceil(filteredEvents.length / 6)}</div>
+          <BsCaretRight className="next-icon" onClick={nextPage} size={40} />
+        </div>
       </div>
-
     </div>
 
   )
