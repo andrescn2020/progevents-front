@@ -3,6 +3,8 @@ import { getEventsWithDayFilter } from "../functions/getEventsWithDayFilter";
 const initialState = {
     events: [],
     filterEvents: [],
+    pagesPerViews: 6,
+    page: 1,
     filters: {
         date: "",
         format: "",
@@ -21,40 +23,56 @@ function rootReducer(state = initialState, { type, payload }) {
             }
         case "GET_FILTER":
             let newFilter = state.filters
-            if(payload[0] === "hoy"){
+            if (payload[0] === "hoy") {
                 newFilter[payload[1]] = "hoy"
             }
-            if(payload[0] === "mañana"){
+            if (payload[0] === "mañana") {
                 newFilter[payload[1]] = "mañana"
             }
-            if(payload[0] === "proximo mes"){
+            if (payload[0] === "proximo mes") {
                 newFilter[payload[1]] = "proximo mes"
             }
-            if(payload[0] === "presencial"){
+            if (payload[0] === "defaultDate") {
+                newFilter[payload[1]] = ""
+            }
+            if (payload[0] === "presencial") {
                 newFilter[payload[1]] = "presencial"
             }
-            if(payload[0] === "online"){
+            if (payload[0] === "online") {
                 newFilter[payload[1]] = "online"
             }
-            if(payload[0] === "español"){
+            if (payload[0] === "defaultFormat") {
+                newFilter[payload[1]] = ""
+            }
+            if (payload[0] === "español") {
                 newFilter[payload[1]] = "español"
             }
-            if(payload[0] === "english"){
+            if (payload[0] === "english") {
                 newFilter[payload[1]] = "english"
             }
-            if(payload[0] === "gratis"){
+            if (payload[0] === "defaultLanguage") {
+                newFilter[payload[1]] = ""
+            }
+            if (payload[0] === "gratis") {
                 newFilter[payload[1]] = "gratis"
             }
-            if(payload[0] === "con precio"){
+            if (payload[0] === "con precio") {
                 newFilter[payload[1]] = "con precio"
             }
-            console.log(newFilter);
+            if (payload[0] === "defaultPrice") {
+                newFilter[payload[1]] = ""
+            }
             return {
                 ...state,
                 filters: newFilter
             }
+
         case "GET_FILTERED_EVENTS":
+
             let filteredEvents = state.events;
+
+  
+
             if (payload.date === "hoy") {
                 let day = new Date().getDate();
                 let month = new Date().getMonth() + 1;
@@ -140,6 +158,38 @@ function rootReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 filterEvents: filteredEvents
+            }
+
+        case "RESET_FILTERS":
+            return {
+                ...state,
+                filterEvents: state.events
+            }
+
+        case "CHANGE_PAGE":
+
+            let pageNumber = state.page;
+            let dividePayload = payload.split(",");
+
+            if(dividePayload[1] === "sumar"){
+                pageNumber+= 1;
+
+            }
+
+            if(dividePayload[1] === "restar"){
+
+                if(Number(dividePayload[0]) === 1 || Number(dividePayload[0]) < 1){
+                    pageNumber = 1;
+
+                } else {
+                    pageNumber-= 1;
+
+                }
+            }
+
+            return {
+                ...state,
+                page: pageNumber
             }
 
         default:

@@ -18,9 +18,21 @@ export function getFilteredEvents(filterInput) {
 };
 
 export function getFilter(filterType, filterKey) {
-    console.log(filterKey);
     return {
         type: "GET_FILTER",
         payload: [filterType, filterKey]
+    };
+};
+
+export function resetFilters() {
+    return {
+        type: "RESET_FILTERS"
+    };
+};
+
+export function changePage(pageAndMethod) {
+    return {
+        type: "CHANGE_PAGE",
+        payload: pageAndMethod
     };
 };
