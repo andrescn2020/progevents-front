@@ -56,9 +56,10 @@ const Filtros = () => {
   return (
     <div className="filter-container">
 
+      <h1 className="filter-title">Filtros</h1>
+
       <div className="container">
 
-        <h1 className="filter-title">Filtros</h1>
         <select name='date' onChange={handleFilter} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
           <option value="defaultDate">Fecha</option>
           <option value="hoy">Hoy</option>
@@ -80,9 +81,9 @@ const Filtros = () => {
           <option value="gratis">Gratis</option>
           <option value="con precio">Valor Pagado</option>
         </select>
-        <div className="button-container">
-          <button type="button" onClick={() => dispatch(resetFilters())} className="btn btn-secondary">Limpiar Filtros</button>
-        </div>
+
+        <button type="button" onClick={() => dispatch(resetFilters())} className="btn btn-secondary">Limpiar Filtros</button>
+
 
         {/* <Button variant="secondary" onClick={() => dispatch(resetFilters())}>Limpiar Filtros</Button> */}
       </div>
@@ -90,13 +91,16 @@ const Filtros = () => {
         <div className="events-container">
           {currentEvents?.map((event) => (
             <Card key={event.id} className="card">
+              <div className="circle">
+                <Card.Text className="card-text">
+                  {event.date.slice(5)}
+                </Card.Text>
+              </div>
               <Card.Img className="card-image" variant="top" src={event.image} />
               <Card.Body>
-                <Card.Title>{event.title}</Card.Title>
-                <Card.Text>
-                  Fecha: {event.date.slice(5)}
-                </Card.Text>
-                <a href={event.eventLink} target="_blank">Registrarse</a>
+                <Card.Title className="card-title">{event.title}</Card.Title>
+
+                <a className="link" href={event.eventLink} target="_blank">Registrarse</a>
               </Card.Body>
             </Card>
           ))}
@@ -104,9 +108,9 @@ const Filtros = () => {
         </div>
 
         <div className="pagination-container">
-          <BsCaretLeft className="previous-icon" onClick={previousPage} size={40} />
-          <div>{currentPage} de {Math.ceil(filteredEvents.length / 6)}</div>
-          <BsCaretRight className="next-icon" onClick={nextPage} size={40} />
+          <BsCaretLeft className="previous-icon" onClick={previousPage} />
+          <div><h4 className="pagination-text">{currentPage} de {Math.ceil(filteredEvents.length / 6)}</h4></div>
+          <BsCaretRight className="next-icon" onClick={nextPage} />
         </div>
       </div>
     </div>

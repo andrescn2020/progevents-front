@@ -14,7 +14,8 @@
 }
 
 .subtitle {
-    color: bisque;
+    color: #DFDDD0;
+    text-align: center;
     width: 25%;
     font-size: 3rem;
 }
@@ -29,14 +30,18 @@
     margin-right: 10rem;
     margin-left: 10rem;
     border-radius: 1rem;
-    height: 75vh;
+    height: 80vh;
 }
 
 .carousel-inner {
-    height: 75vh;
     border-radius: 1rem;
     position: relative;
     overflow: hidden;
+    height: 80vh;
+}
+
+#carrusel-image {
+    object-fit: cover;
 }
 
 .fitter {
@@ -54,24 +59,29 @@
     display: none;
 }
 
-@media only screen and (max-width: 1080px){
+@media only screen and (max-width: 1080px) {
     .full-container {
         margin-top: 40rem;
     }
+
     .carrusel-container {
         margin-left: 1rem;
         margin-right: 1rem;
     }
+
     .image-carousel {
         height: 50vh;
         width: auto;
     }
+
     .carrusel-container {
         height: 50vh;
     }
+
     .carousel-inner {
         height: 50vh;
     }
+
     .subtitle {
         display: flex;
         justify-content: center;
@@ -79,9 +89,11 @@
         width: 100%;
         font-size: 2rem;
     }
+
     .arrow-container {
         display: none;
     }
+
     .arrow-container-mobile {
         margin-top: 10rem;
         display: flex;
@@ -89,24 +101,29 @@
     }
 }
 
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 720px) {
     .full-container {
         margin-top: 10rem;
     }
+
     .carrusel-container {
         margin-left: 1rem;
         margin-right: 1rem;
     }
+
     .image-carousel {
         height: 50vh;
         width: auto;
     }
+
     .carrusel-container {
         height: 50vh;
     }
+
     .carousel-inner {
         height: 50vh;
     }
+
     .subtitle {
         display: flex;
         justify-content: center;
@@ -114,9 +131,11 @@
         width: 100%;
         font-size: 2rem;
     }
+
     .arrow-container {
         display: none;
     }
+
     .arrow-container-mobile {
         margin-top: 10rem;
         display: flex;
