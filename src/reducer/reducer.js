@@ -47,8 +47,8 @@ function rootReducer(state = initialState, { type, payload }) {
             if (payload[0] === "español") {
                 newFilter[payload[1]] = "español"
             }
-            if (payload[0] === "english") {
-                newFilter[payload[1]] = "english"
+            if (payload[0] === "ingles") {
+                newFilter[payload[1]] = "ingles"
             }
             if (payload[0] === "defaultLanguage") {
                 newFilter[payload[1]] = ""
@@ -62,6 +62,7 @@ function rootReducer(state = initialState, { type, payload }) {
             if (payload[0] === "defaultPrice") {
                 newFilter[payload[1]] = ""
             }
+            console.log(newFilter);
             return {
                 ...state,
                 filters: newFilter
@@ -146,7 +147,7 @@ function rootReducer(state = initialState, { type, payload }) {
             if (payload.language === "español") {
                 filteredEvents = filteredEvents.filter(event => event.language.toLowerCase() === payload.language.toLowerCase());
             } else if (payload.language === "ingles") {
-                filteredEvents = filteredEvents.filter(event => event.language.toLowerCase() === payload.language.toLowerCase());
+                filteredEvents = filteredEvents.filter(event => event.language.toLowerCase() === "english");
             }
 
             if (payload.price === "gratis") {
@@ -167,7 +168,6 @@ function rootReducer(state = initialState, { type, payload }) {
                 language: "",
                 price: ""
             }
-            console.log(emptyFilter);
             return {
                 ...state,
                 filters: emptyFilter,

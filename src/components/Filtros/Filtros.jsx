@@ -66,32 +66,32 @@ const Filtros = () => {
     dispatch(resetFilters());
   }
 
-  const EventContainer = () => {
-    if (currentEvents.length === 0 && allFilters.date || allFilters.format || allFilters.language || allFilters.price) {
-      return (
-        <h1 className="filters-dont-found">No se encontraron resultados con los filtros seleccionados</h1>
-      )
-    } else if (currentEvents) {
-      return (
-          <div className="events-container">
-           {currentEvents.map((event) => (
-            <Card key={event.id} className="card">
-              <div className="circle">
-                <Card.Text className="card-text">
-                  {event.date.slice(5)}
-                </Card.Text>
-              </div>
-              <Card.Img className="card-image" variant="top" src={event.image}/>
-              <Card.Body>
-                <Card.Title className="card-title">{event.title}</Card.Title>
-                <a className="link" href={event.eventLink} target="_blank">Registrarse</a>
-              </Card.Body>
-            </Card>
-            ))}
-          </div>
-      )
-    }
-  }
+  // const EventContainer = () => {
+  //   if (currentEvents.length === 0 && allFilters.date || allFilters.format || allFilters.language || allFilters.price) {
+  //     return (
+  //       <h1 className="filters-dont-found">No se encontraron resultados con los filtros seleccionados</h1>
+  //     )
+  //   } else if (currentEvents) {
+  //     return (
+  //         <div className="events-container">
+  //          {currentEvents.map((event) => (
+  //           <Card key={event.id} className="card">
+  //             <div className="circle">
+  //               <Card.Text className="card-text">
+  //                 {event.date.slice(5)}
+  //               </Card.Text>
+  //             </div>
+  //             <Card.Img className="card-image" variant="top" src={event.image}/>
+  //             <Card.Body>
+  //               <Card.Title className="card-title">{event.title}</Card.Title>
+  //               <a className="link" href={event.eventLink} target="_blank">Registrarse</a>
+  //             </Card.Body>
+  //           </Card>
+  //           ))}
+  //         </div>
+  //     )
+  //   }
+  // }
 
   return (
     <div id="filters" className="filter-container">
@@ -128,7 +128,7 @@ const Filtros = () => {
         {/* <Button variant="secondary" onClick={() => dispatch(resetFilters())}>Limpiar Filtros</Button> */}
       </div>
       <div className="section-right-container">
-        {/* <div className="events-container">
+        <div className="events-container">
           {currentEvents ? currentEvents.map((event) => (
             <Card key={event.id} className="card">
               <div className="circle">
@@ -143,9 +143,8 @@ const Filtros = () => {
               </Card.Body>
             </Card>
           )) : <div className="lds-dual-ring"></div>}
-
-        </div> */}
-        {currentEvents ? <EventContainer /> : <div className="lds-dual-ring"></div>}
+        </div>
+        {/* {currentEvents ? <EventContainer /> : <div className="lds-dual-ring"></div>} */}
 
 
       </div>
