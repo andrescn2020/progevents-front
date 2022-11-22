@@ -1,32 +1,36 @@
 .navbar-container {
     margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.logo-container {
+    width: 84%;
     margin-left: 10rem;
+    margin-right: 10rem;
 }
 
 .logo {
     cursor: pointer;
-    font-size: 2rem;
-    font-weight: lighter;
+    font-size: 3rem;
     color: #313131;
+}
+
+.list-container {
+    display: flex;
+    justify-content: end;
+    width: 100%;
 }
 
 .list {
     color: #313131;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .list-item {
     cursor: pointer;
     margin: 2rem 2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .subscribe-container {
@@ -58,6 +62,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 .list-menu-item {
@@ -66,8 +71,11 @@
 }
 
 .icon {
-    font-size: 2rem;
-    margin-right: 2rem;
+    font-size: 3rem;
+    margin-left: 3rem;
+    display: flex;
+    justify-content: end;
+    width: 100%;
 }
 
 @keyframes slidein {
@@ -113,12 +121,11 @@
 
 @media only screen and (max-width: 720px){
     .navbar-container {
-        margin-top: 0;
-        justify-content: space-around;
-    }
-	.logo-container {
-        margin-left: 2rem;
-    }
+        margin-top: 2rem;
+        width: 84%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }    
     .icon {
         margin-right: 0;
     }

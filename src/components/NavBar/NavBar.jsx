@@ -36,14 +36,11 @@ export const NavBar = () => {
     <nav>
       <div className="navbar-container">
         <div className="logo-container">
-          <h2 className="logo"><strong>prog</strong>events</h2>
+          <h2 className="logo"><strong>prog</strong><span style={{ color: "#B9134F" }}>events</span></h2>
         </div>
-        <Menu />
-        {width < 720 ? null : <div className="subscribe-container">
-          <button className="button">Subscribe</button>
-        </div>}
+        {/* <Menu /> */}
       </div>
-      {menu ? <div className="list-menu-container"><div className="list-menu-item-container"><span className="list-menu-item" style={{ marginTop: "1rem" }}>Home</span></div><div className="list-menu-item"><span className="list-menu-item">Events</span></div><div className="list-menu-item"><span className="list-menu-item">Schedule</span></div></div> : null}
+      {/* {menu ? <div className="list-menu-container"><div className="list-menu-item-container"><span className="list-menu-item" style={{ marginTop: "1rem" }}>Home</span></div><div className="list-menu-item"><span className="list-menu-item">Events</span></div><div className="list-menu-item"><span className="list-menu-item">Schedule</span></div></div> : null} */}
     </nav>
 
   )

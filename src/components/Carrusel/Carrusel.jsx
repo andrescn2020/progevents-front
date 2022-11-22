@@ -1,16 +1,10 @@
 import Carousel from 'react-bootstrap/Carousel';
-import HeroImage from '../../assets/UpcomingEvent.png';
 import Arrow from "../../assets/Arrow 3.png"
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 function Carrusel() {
 
   const allEvents = useSelector((state) => state.events);
-
-  // useEffect(() => {
-
-  // }, []);
 
   return (
     <div className='full-container'>
@@ -25,24 +19,24 @@ function Carrusel() {
           <img
             id='carrusel-image'
             className="d-block w-100 image-carousel"
-            src={allEvents[0].image}
-            alt={allEvents[0].title}
+            src={allEvents[3]?.image}
+            alt={allEvents[3]?.title}
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             id='carrusel-image'
             className="d-block w-100 image-carousel"
-            src={allEvents[1].image}
-            alt={allEvents[0].title}
+            src={allEvents[1]?.image}
+            alt={allEvents[1]?.title}
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             id='carrusel-image'
             className="d-block w-100 image-carousel"
-            src={allEvents[2].image}
-            alt={allEvents[0].title}
+            src={allEvents[2]?.image}
+            alt={allEvents[2]?.title}
           />
         </Carousel.Item>
       </Carousel>

@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { getEvents, getFilter, getFilteredEvents, resetFilters } from '../../actions/actions';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import NotFoundImage from '../../assets/NotFoundImage.png';
 
 const Filtros = () => {
 
@@ -53,8 +54,47 @@ const Filtros = () => {
     }
   };
 
+  const cleanFilters = () => {
+    let fecha = document.getElementsByName("date");
+    let formato = document.getElementsByName("format");
+    let lenguaje = document.getElementsByName("language");
+    let precio = document.getElementsByName("price");
+    fecha[0].value = "defaultDate";
+    formato[0].value = "defaultFormat";
+    lenguaje[0].value = "defaultLanguage";
+    precio[0].value = "defaultPrice";
+    dispatch(resetFilters());
+  }
+
+  const EventContainer = () => {
+    if (currentEvents.length === 0 && allFilters.date || allFilters.format || allFilters.language || allFilters.price) {
+      return (
+        <h1 className="filters-dont-found">No se encontraron resultados con los filtros seleccionados</h1>
+      )
+    } else if (currentEvents) {
+      return (
+          <div className="events-container">
+           {currentEvents.map((event) => (
+            <Card key={event.id} className="card">
+              <div className="circle">
+                <Card.Text className="card-text">
+                  {event.date.slice(5)}
+                </Card.Text>
+              </div>
+              <Card.Img className="card-image" variant="top" src={event.image}/>
+              <Card.Body>
+                <Card.Title className="card-title">{event.title}</Card.Title>
+                <a className="link" href={event.eventLink} target="_blank">Registrarse</a>
+              </Card.Body>
+            </Card>
+            ))}
+          </div>
+      )
+    }
+  }
+
   return (
-    <div className="filter-container">
+    <div id="filters" className="filter-container">
 
       <h1 className="filter-title">Filtros</h1>
 
@@ -82,14 +122,14 @@ const Filtros = () => {
           <option value="con precio">Valor Pagado</option>
         </select>
 
-        <button type="button" onClick={() => dispatch(resetFilters())} className="btn btn-secondary">Limpiar Filtros</button>
+        <button type="button" onClick={cleanFilters} className="btn btn-secondary">Limpiar Filtros</button>
 
 
         {/* <Button variant="secondary" onClick={() => dispatch(resetFilters())}>Limpiar Filtros</Button> */}
       </div>
       <div className="section-right-container">
-        <div className="events-container">
-          {currentEvents?.map((event) => (
+        {/* <div className="events-container">
+          {currentEvents ? currentEvents.map((event) => (
             <Card key={event.id} className="card">
               <div className="circle">
                 <Card.Text className="card-text">
@@ -99,22 +139,22 @@ const Filtros = () => {
               <Card.Img className="card-image" variant="top" src={event.image} />
               <Card.Body>
                 <Card.Title className="card-title">{event.title}</Card.Title>
-
                 <a className="link" href={event.eventLink} target="_blank">Registrarse</a>
               </Card.Body>
             </Card>
-          ))}
+          )) : <div className="lds-dual-ring"></div>}
 
-        </div>
+        </div> */}
+        {currentEvents ? <EventContainer /> : <div className="lds-dual-ring"></div>}
 
-        <div className="pagination-container">
-          <BsCaretLeft className="previous-icon" onClick={previousPage} />
-          <div><h4 className="pagination-text">{currentPage} de {Math.ceil(filteredEvents.length / 6)}</h4></div>
-          <BsCaretRight className="next-icon" onClick={nextPage} />
-        </div>
+
+      </div>
+      <div className="pagination-container">
+        <BsCaretLeft className="previous-icon" onClick={previousPage} />
+        <div><h4 className="pagination-text">{currentPage} de {Math.ceil(filteredEvents.length / 6) === 0 ? "1" : Math.ceil(filteredEvents.length / 6)}</h4></div>
+        <BsCaretRight className="next-icon" onClick={nextPage} />
       </div>
     </div>
-
   )
 
 };

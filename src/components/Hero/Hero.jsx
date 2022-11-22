@@ -1,17 +1,18 @@
 import React from 'react';
-import HeroImage from '../../assets/hero.jpg';
 
 const Hero = () => {
     return (
         <div className='hero-container'>
             <div className='text-container'>
-                <h1 className='text'>Ten a mano los <br /> eventos mas <br /> interesantes sobre el mundo IT en un <br />  solo lugar!</h1>
+                <div className="logo-container">
+                    <h2 className="logo"><strong>prog</strong><span style={{ color: "#B9134F" }}>events</span></h2>
+                </div>
+                <h1 className='text'>Ten a mano los <br /> eventos mas <br /> interesantes sobre el <span style={{ color: "#B9134F" }}>mundo IT</span>  en un <br />  solo lugar!</h1>
+                <div className='link-container'>
+                    <a id='events-links' className='btn btn-secondary' href='#filters'>Ver Eventos</a>
+                </div>
             </div>
-            <div className='second-section-container'>
-                <img className='image' src={HeroImage} alt="Hero Image" />
-                <div className='second-text-container'><h3 className='image-text'>Holasdasdasdasdasd  sa d sa d</h3></div>
-                <div className='button-container'><button className='cta-button'>Get a Ticket</button></div>
-            </div>
+            <div className='second-section-container'></div>
         </div>
     )
 };

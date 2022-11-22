@@ -161,8 +161,16 @@ function rootReducer(state = initialState, { type, payload }) {
             }
 
         case "RESET_FILTERS":
+            let emptyFilter = {
+                date: "",
+                format: "",
+                language: "",
+                price: ""
+            }
+            console.log(emptyFilter);
             return {
                 ...state,
+                filters: emptyFilter,
                 filterEvents: state.events
             }
 
