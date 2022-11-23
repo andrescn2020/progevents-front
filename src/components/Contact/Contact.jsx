@@ -14,7 +14,7 @@ const Contact = () => {
 
     const sendEmail = (data, event) => {
         event.preventDefault();
-        emailjs.sendForm("service_dqeryzd", "template_suhlgp5", event.target, "tiR73mp0Lw91oxF6Y")
+        emailjs.sendForm(import.meta.env.VITE_EMAIL_ID, import.meta.env.VITE_TEMPLATE_ID, event.target, import.meta.env.VITE_ACCES_KEY)
             .then(response => {
                 MySwal.fire({
                     title: "",
