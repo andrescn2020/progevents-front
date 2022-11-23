@@ -16,13 +16,12 @@ function Carrusel() {
       </div>
       <Carousel className='carrusel-container'>
         <Carousel.Item className='fitten'>
-          <a href={allEvents[13]?.eventLink} target="_blank">
+          <a href={allEvents[23]?.eventLink} target="_blank">
             <img
               id='carrusel-image'
               className="d-block w-100 image-carousel"
-              style={{"objectFit": "cover"}}
-              src={allEvents[13]?.image}
-              alt={allEvents[13]?.title}
+              src={allEvents[23]?.image}
+              alt={allEvents[23]?.title}
             />
           </a>
         </Carousel.Item>
