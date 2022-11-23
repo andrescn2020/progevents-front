@@ -26,25 +26,22 @@
 }
 
 .carrusel-container {
-    border-radius: 1rem;
-    height: 75vh;
+    height: 80vh;
 }
 
 .carousel-inner {
-    border-radius: 1rem;
     position: relative;
     overflow: hidden;
-    height: 75vh;
+    height: 80vh;
 }
 
 #carrusel-image {
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .image-carousel {
-    height: 75vh;
+    height: 80vh;
     width: auto;
-    border-radius: 1rem;
     display: block;
 }
 
@@ -63,10 +60,6 @@
         margin-top: 70rem;
     }
 
-    .carrusel-container {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
 
     .image-carousel {
         height: 50vh;
@@ -102,13 +95,9 @@
 
 @media only screen and (max-width: 720px) {
     .full-container {
-        margin-top: 10rem;
+        margin-top: 15rem;
     }
 
-    .carrusel-container {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
 
     .image-carousel {
         height: 50vh;
