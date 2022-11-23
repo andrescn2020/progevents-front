@@ -19,8 +19,8 @@ function Carrusel() {
           <img
             id='carrusel-image'
             className="d-block w-100 image-carousel"
-            src={allEvents[3]?.image}
-            alt={allEvents[3]?.title}
+            src={allEvents[10]?.image}
+            alt={allEvents[10]?.title}
           />
         </Carousel.Item>
         <Carousel.Item>

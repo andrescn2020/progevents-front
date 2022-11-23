@@ -5,6 +5,7 @@ const initialState = {
     filterEvents: [],
     pagesPerViews: 6,
     page: 1,
+    loading: true,
     filters: {
         date: "",
         format: "",
@@ -16,10 +17,13 @@ const initialState = {
 function rootReducer(state = initialState, { type, payload }) {
     switch (type) {
         case "GET_EVENTS":
+            let sortEvents = payload;
+            sortEvents.sort(function (a, b) { return a.date.localeCompare(b.date) })
             return {
                 ...state,
-                events: payload,
-                filterEvents: payload
+                events: sortEvents,
+                filterEvents: payload,
+                loading: false
             }
         case "GET_FILTER":
             let newFilter = state.filters
@@ -62,7 +66,7 @@ function rootReducer(state = initialState, { type, payload }) {
             if (payload[0] === "defaultPrice") {
                 newFilter[payload[1]] = ""
             }
-            console.log(newFilter);
+
             return {
                 ...state,
                 filters: newFilter
@@ -72,7 +76,7 @@ function rootReducer(state = initialState, { type, payload }) {
 
             let filteredEvents = state.events;
 
-  
+
 
             if (payload.date === "hoy") {
                 let day = new Date().getDate();
@@ -179,18 +183,18 @@ function rootReducer(state = initialState, { type, payload }) {
             let pageNumber = state.page;
             let dividePayload = payload.split(",");
 
-            if(dividePayload[1] === "sumar"){
-                pageNumber+= 1;
+            if (dividePayload[1] === "sumar") {
+                pageNumber += 1;
 
             }
 
-            if(dividePayload[1] === "restar"){
+            if (dividePayload[1] === "restar") {
 
-                if(Number(dividePayload[0]) === 1 || Number(dividePayload[0]) < 1){
+                if (Number(dividePayload[0]) === 1 || Number(dividePayload[0]) < 1) {
                     pageNumber = 1;
 
                 } else {
-                    pageNumber-= 1;
+                    pageNumber -= 1;
 
                 }
             }

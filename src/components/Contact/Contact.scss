@@ -1,6 +1,3 @@
-.formandtitle-container {
-    border: 1px solid black;
-}
 
 .form-title {
     display: flex;
@@ -179,62 +176,14 @@
     }
 }
 
-/*
-.form-container {
-    margin-right: 10rem;
-    margin-left: 10rem;
-    display: grid;
-    justify-content: center;
-    border: 1px solid red;
-    row-gap: 1rem;
+@media only screen and (min-width:721px) and (max-width:1080px) {
+    .form-title {
+        margin-top: 10rem;
+    }
 }
 
-.form-title {
-    display: flex;
-    justify-content: center;
+@media only screen and (min-width:1081px) and (max-width:1439px) {
+    .form-title {
+        margin-top: 1rem;
+    }
 }
-
-.nombre-container {
-    display: flex;
-    justify-content: center;
-}
-
-.nombre {
-    width: 50%;
-}
-
-.mail-container {
-    display: flex;
-    justify-content: center;
-}
-
-.mail {
-    width: 50%;
-}
-
-.asunto-container {
-    display: flex;
-    justify-content: center;
-}
-
-.asunto {
-    width: 50%;
-}
-
-.message-container {
-    display: flex;
-    justify-content: center;
-}
-
-.mensaje {
-    width: 50%;
-}
-
-.submit-button-container {
-    display: flex;
-    justify-content: center;
-}
-
-.submit-button {
-    width: 20%;
-}*/
