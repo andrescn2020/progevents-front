@@ -23,7 +23,9 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.2",
     "sass": "^1.56.1",
-    "send-email": "^1.1.3"
+    "send-email": "^1.1.3",
+    "sweetalert2": "^11.6.13",
+    "sweetalert2-react-content": "^5.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",

@@ -1,6 +1,12 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import emailjs from "@emailjs/browser";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
+
 
 const Contact = () => {
 
@@ -9,8 +15,21 @@ const Contact = () => {
     const sendEmail = (data, event) => {
         event.preventDefault();
         emailjs.sendForm("service_dqeryzd", "template_suhlgp5", event.target, "tiR73mp0Lw91oxF6Y")
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
+            .then(response => {
+                MySwal.fire({
+                    title: "",
+                    html: <i>Mensaje Enviado!</i>,
+                    icon: 'success'
+                })
+            })
+            .catch(error => {
+                MySwal.fire({
+                    title: "Ocurrio un error",
+                    html: <i>Por favor vuelva a intentarlo</i>,
+                    icon: "error"
+                })
+            })
+        
     };
 
     return (

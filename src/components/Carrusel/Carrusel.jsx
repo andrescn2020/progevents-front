@@ -16,28 +16,35 @@ function Carrusel() {
       </div>
       <Carousel className='carrusel-container'>
         <Carousel.Item className='fitten'>
-          <img
-            id='carrusel-image'
-            className="d-block w-100 image-carousel"
-            src={allEvents[10]?.image}
-            alt={allEvents[10]?.title}
-          />
+          <a href={allEvents[13]?.eventLink} target="_blank">
+            <img
+              id='carrusel-image'
+              className="d-block w-100 image-carousel"
+              style={{"objectFit": "cover"}}
+              src={allEvents[13]?.image}
+              alt={allEvents[13]?.title}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            id='carrusel-image'
-            className="d-block w-100 image-carousel"
-            src={allEvents[1]?.image}
-            alt={allEvents[1]?.title}
-          />
+          <a href={allEvents[25]?.eventLink} target="_blank">
+            <img
+              id='carrusel-image'
+              className="d-block w-100 image-carousel"
+              src={allEvents[25]?.image}
+              alt={allEvents[25]?.title}
+            />
+          </a>
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            id='carrusel-image'
-            className="d-block w-100 image-carousel"
-            src={allEvents[2]?.image}
-            alt={allEvents[2]?.title}
-          />
+          <a href={allEvents[24]?.eventLink} target="_blank">
+            <img
+              id='carrusel-image'
+              className="d-block w-100 image-carousel"
+              src={allEvents[24]?.image}
+              alt={allEvents[24]?.title}
+            />
+          </a>
         </Carousel.Item>
       </Carousel>
       <div className='arrow-container-mobile'>

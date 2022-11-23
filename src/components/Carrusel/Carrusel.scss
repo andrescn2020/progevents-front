@@ -1,6 +1,6 @@
 .full-container {
     background-color: #1E1E1E;
-    width: auto;
+    width: 100vw;
     height: 120vh;
 }
 
@@ -26,25 +26,19 @@
 }
 
 .carrusel-container {
-    margin-right: 10rem;
-    margin-left: 10rem;
     border-radius: 1rem;
-    height: 80vh;
+    height: 75vh;
 }
 
 .carousel-inner {
     border-radius: 1rem;
     position: relative;
     overflow: hidden;
-    height: 80vh;
+    height: 75vh;
 }
 
 #carrusel-image {
     object-fit: cover;
-}
-
-.fitter {
-    border: 1px solid red;
 }
 
 .image-carousel {
