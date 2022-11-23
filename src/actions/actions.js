@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getEvents() {
     return async function (dispatch) {
-        const json = await axios.get("https://03jw4d3g69.execute-api.us-east-1.amazonaws.com/events");
+        const json = await axios.get(import.meta.env.VITE_API_URL);
         return dispatch({
             type: "GET_EVENTS",
             payload: json.data.body
