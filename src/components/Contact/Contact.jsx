@@ -34,7 +34,7 @@ const Contact = () => {
 
     return (
         <div className='formandtitle-container'>
-            <h3 className='form-title'>Para consultas, sugerencias y por si tienes algun evento que quieres que aparezca no dudes en contactarme!</h3>
+            <h3 className='form-title'>Para consultas y solicitudes para agregar algun evento nuevo no dudes en contactarme!</h3>
             <form className="background" onSubmit={handleSubmit(sendEmail)}>
                 <div className="container-form">
                     <div className="screen">
