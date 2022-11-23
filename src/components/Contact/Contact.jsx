@@ -10,7 +10,7 @@ const MySwal = withReactContent(Swal)
 
 const Contact = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const sendEmail = (data, event) => {
         event.preventDefault();
@@ -29,7 +29,7 @@ const Contact = () => {
                     icon: "error"
                 })
             })
-        
+        reset();
     };
 
     return (
@@ -54,21 +54,23 @@ const Contact = () => {
                             <div className="screen-body-item">
                                 <div className="app-form">
                                     <div className="app-form-group">
-                                        <input className="app-form-control" type="text" placeholder="NOMBRE..." {...register("nombre", {
+                                        <input className="app-form-control" name='nombre' type="text" placeholder="NOMBRE..." {...register("nombre", {
                                             required: true,
                                             maxLength: 16
                                         })} />
+                                        {errors.nombre ? <p style={{color: "red"}}>Este campo es obligatorio debe tener un maximo de 16 caracteres</p> : null}
                                     </div>
                                     <div className="app-form-group">
-                                        <input className="app-form-control" type="text" placeholder="ASUNTO..." {...register("asunto")} />
+                                        <input className="app-form-control" name='asunto' type="text" placeholder="ASUNTO..." {...register("asunto")} />
                                     </div>
                                     <div className="app-form-group">
-                                        <input className="app-form-control" type="text" placeholder="MAIL..." {...register("email", {
+                                        <input className="app-form-control" name='mail' type="text" placeholder="MAIL..." {...register("email", {
                                             pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
                                         })} />
+                                        {errors.email ? <p style={{color: "red"}}>Este campo no cumple con el formato requerido</p> : null}
                                     </div>
                                     <div className="app-form-group message">
-                                        <input className="app-form-control" type="text" placeholder="MENSAJE..." {...register("descripcion")} />
+                                        <input className="app-form-control" name='mensaje' type="text" placeholder="MENSAJE..." {...register("descripcion")} />
                                     </div>
                                     <div className="app-form-group buttons">
                                         <input type="submit" value="Enviar" className="app-form-button" />

@@ -64,6 +64,7 @@ const Filtros = () => {
     lenguaje[0].value = "defaultLanguage";
     precio[0].value = "defaultPrice";
     dispatch(resetFilters());
+    setCurrentPage(1)
   }
 
   const EventContainer = () => {
