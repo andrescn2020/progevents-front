@@ -192,26 +192,46 @@
 
 @media only screen and (min-width:1081px) and (max-width:1439px) {
     .filter-container {
-        height: 250vh;
+        margin-top: 0rem;
+        margin-left: 0rem;
+        justify-content: center;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        height: fit-content;
     }
+
     .events-container {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         row-gap: 5rem;
         column-gap: 2rem;
         margin-left: 0;
+        height: fit-content;
     }
-    .btn{
+
+    .section-right-container {
+        height: fit-content;
+    }
+
+    .btn {
         font-size: 1rem;
     }
+
     .container {
         margin-top: 0;
         width: auto;
     }
+
     .pagination-container {
-        padding-top: 30rem;
-        margin-top: 0rem;
+        padding-top: 0rem;
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+        padding-bottom: 0rem;
+    }
+
+    .card {
+        width: 22rem;
     }
 }
 
@@ -274,6 +294,7 @@
     .card:hover {
         transform: none;
     }
+
     .pagination-container {
         margin-top: 8rem;
     }
@@ -326,3 +347,5 @@
         margin-bottom: 5rem;
     }
 }
+
+@media screen and (min-height: 700px) {}
