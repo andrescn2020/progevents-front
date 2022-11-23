@@ -130,3 +130,22 @@
         justify-content: center;
     }
 }
+
+@media only screen and (max-height: 720px) {
+    .full-container {
+        border: 1px solid #1E1E1E;
+    }
+    .image-carousel {
+        height: 100vh;
+        width: auto;
+    }
+
+    .carrusel-container {
+        height: 100vh;
+    }
+
+    .carousel-inner {
+        height: 100vh;
+    }
+
+}

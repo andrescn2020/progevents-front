@@ -61,7 +61,7 @@
     text-decoration: none;
 }
 
-@media only screen and (min-width:1081px) and (max-width:1439px){
+@media only screen and (min-width:1081px) and (max-width:1439px) {
     .text {
         text-align: left;
         color: #313131;
@@ -71,33 +71,38 @@
         letter-spacing: -0.1rem;
         width: 100%;
     }
+
     .cta-button {
         font-size: 2rem;
         width: 20rem;
         height: 5rem;
     }
+
     .logo {
         justify-content: start;
     }
 }
 
-@media only screen and (min-width:721px) and (max-width:1080px){
+@media only screen and (min-width:721px) and (max-width:1080px) {
     .hero-container {
         display: grid;
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: -50rem;
     }
+
     .second-section-container {
         display: none;
         width: 0px;
         height: 0px;
         gap: 0;
     }
+
     .text-container {
         text-align: center;
         width: 100%;
     }
+
     .text {
         text-align: center;
         color: #313131;
@@ -106,30 +111,34 @@
         letter-spacing: -0.1rem;
         width: 100%;
     }
+
     .link-container {
         justify-content: center;
     }
+
     #events-links {
         font-size: 3rem;
         width: 60%;
         height: 6rem;
     }
+
     .logo {
         justify-content: center;
     }
 }
 
-@media only screen and (max-width: 720px){
+@media only screen and (max-width: 720px) {
     .hero-container {
         display: grid;
         margin-left: 1rem;
         margin-right: 1rem;
         height: 80vh;
     }
+
     .text-container {
         width: 100%;
     }
-    
+
     .text {
         text-align: center;
         color: #313131;
@@ -138,23 +147,33 @@
         letter-spacing: -0.1rem;
         width: 100%;
     }
+
     .second-section-container {
         display: none;
         width: 0px;
         height: 0px;
         gap: 0;
     }
+
     .button-container {
         margin-top: 1rem;
         text-align: center;
         width: 100%;
     }
+
     .link-container {
         justify-content: center;
     }
+
     .logo {
         display: inherit;
     }
 }
 
-
+@media only screen and (max-height: 720px) {
+    .hero-container {
+        height: 20vh;
+        padding-bottom: 0;
+        margin-bottom: -5rem;
+    }
+}
