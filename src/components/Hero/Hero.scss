@@ -50,7 +50,7 @@
 }
 
 #events-links {
-    margin-top: 7rem;
+    margin-top: 3rem;
     border-radius: 1rem;
     display: flex;
     width: 60%;
@@ -85,10 +85,10 @@
 
 @media only screen and (min-width:721px) and (max-width:1080px) {
     .hero-container {
-        display: grid;
+        display: inherit;
         margin-left: 1rem;
         margin-right: 1rem;
-        margin-bottom: -50rem;
+        margin-bottom: 0rem;
     }
 
     .second-section-container {
@@ -170,10 +170,10 @@
     }
 }
 
-@media only screen and (max-height: 400px) {
+/*@media only screen and (max-height: 560px) {
     .hero-container {
         height: 20vh;
         padding-bottom: 0;
         margin-bottom: -5rem;
     }
-}
+}*/
