@@ -85,7 +85,6 @@
 
 @media only screen and (min-width:721px) and (max-width:1080px) {
     .hero-container {
-        display: inherit;
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: 0rem;
@@ -169,11 +168,3 @@
         display: inherit;
     }
 }
-
-/*@media only screen and (max-height: 560px) {
-    .hero-container {
-        height: 20vh;
-        padding-bottom: 0;
-        margin-bottom: -5rem;
-    }
-}*/
