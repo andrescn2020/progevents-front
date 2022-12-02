@@ -16,32 +16,32 @@ function Carrusel() {
       </div>
       <Carousel className='carrusel-container'>
         <Carousel.Item className='fitten'>
-          <a href={allEvents[23]?.eventLink} target="_blank">
+          <a href={allEvents[0]?.eventLink} target="_blank">
             <img
               id='carrusel-image'
               className="d-block w-100 image-carousel"
-              src={allEvents[23]?.image}
-              alt={allEvents[23]?.title}
+              src={allEvents[0]?.image}
+              alt={allEvents[0]?.title}
             />
           </a>
         </Carousel.Item>
         <Carousel.Item>
-          <a href={allEvents[25]?.eventLink} target="_blank">
+          <a href={allEvents[1]?.eventLink} target="_blank">
             <img
               id='carrusel-image'
               className="d-block w-100 image-carousel"
-              src={allEvents[25]?.image}
-              alt={allEvents[25]?.title}
+              src={allEvents[1]?.image}
+              alt={allEvents[1]?.title}
             />
           </a>
         </Carousel.Item>
         <Carousel.Item>
-          <a href={allEvents[24]?.eventLink} target="_blank">
+          <a href={allEvents[2]?.eventLink} target="_blank">
             <img
               id='carrusel-image'
               className="d-block w-100 image-carousel"
-              src={allEvents[24]?.image}
-              alt={allEvents[24]?.title}
+              src={allEvents[2]?.image}
+              alt={allEvents[2]?.title}
             />
           </a>
         </Carousel.Item>
