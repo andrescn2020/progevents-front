@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-const MySwal = withReactContent(Swal)
+const MySwal = withReactContent(Swal);
 
 
 

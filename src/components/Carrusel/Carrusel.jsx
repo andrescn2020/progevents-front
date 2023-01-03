@@ -7,6 +7,7 @@ function Carrusel() {
   const allEvents = useSelector((state) => state.events);
 
   return (
+
     <div className='full-container'>
       <div className='next-events'>
         <h2 className='subtitle'>Eventos Destacados</h2>
@@ -51,7 +52,8 @@ function Carrusel() {
       </div>
     </div>
 
-  );
-}
+  )
+
+};
 
 export default Carrusel;
